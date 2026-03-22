@@ -4,6 +4,7 @@
   imports =
     [
       ./../../modules/nixos/autoupdate.nix
+      ./../../modules/nixos/stylix/default.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -44,6 +45,7 @@
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+  services.displayManager.generic.environment = { };
 
   # Tastaturlayout auf Deutsch konfigurieren
   services.xserver.xkb = {
