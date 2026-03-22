@@ -8,7 +8,8 @@
   home.homeDirectory = "/home/jenny";
 
   imports = [
-    ../../modules/lazyvim/default.nix
+    ../../modules/home/lazyvim/default.nix
+    ../../modules/home/stylix/default.nix
   ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

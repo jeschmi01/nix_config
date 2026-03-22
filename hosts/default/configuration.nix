@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./../../modules/autoupdate/default.nix
+      ./../../modules/nixos/autoupdate.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
