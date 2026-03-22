@@ -3,17 +3,23 @@
 {
   imports =
     [
+      ./autoupdate.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 5; # Verhindert, dass /boot wieder vollloäuft
+  boot.loader.systemd-boot.configurationLimit = 5;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -63,6 +69,14 @@
     pulse.enable = true;
   };
 
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
   # Benutzer-Account
   users.users.jenny = {
     shell = pkgs.zsh;
@@ -95,15 +109,6 @@
     extraSpecialArgs = { inherit inputs; };
     users = {
       "jenny" = import ./home.nix;
-    };
-  };
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
     };
   };
 
