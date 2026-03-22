@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ 
+    [
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -54,7 +54,7 @@
   services.printing.enable = true;
 
   # Audio (Pipewire)
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -76,10 +76,10 @@
 
   programs.firefox = {
     enable = true;
-    languagePacks = ["de"];
+    languagePacks = [ "de" ];
   };
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}"];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -88,10 +88,11 @@
     fastfetch
     nixd
     wl-clipboard
+    nixpkgs-fmt
   ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     users = {
       "jenny" = import ./home.nix;
     };
@@ -100,11 +101,11 @@
   services.openssh = {
     enable = true;
     settings = {
-      PasswordAuthentication = false; 
+      PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no"; 
+      PermitRootLogin = "no";
     };
   };
 
-  system.stateVersion = "24.11"; 
+  system.stateVersion = "24.11";
 }

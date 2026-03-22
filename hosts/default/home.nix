@@ -1,4 +1,4 @@
-{ config, pkgs,  ... }:
+{ config, pkgs, ... }:
 
 
 {
@@ -76,7 +76,6 @@
   home.shellAliases = {
     update = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
     ll = "ls -l";
-    edit = "sudo -e";
   };
 
 
@@ -84,7 +83,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
@@ -95,12 +94,23 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    oh-my-zsh = { 
+    oh-my-zsh = {
       enable = true;
       plugins = [
         "git"
-       ];
-       theme = "robbyrussell";
+      ];
+      theme = "robbyrussell";
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Jennifer Schmidt";
+        email = "schmidtjennifer01@gmail.com";
+      };
+      init.defaultBranch = "master";
     };
   };
 }
