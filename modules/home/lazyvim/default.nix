@@ -13,6 +13,7 @@
       bufferline-nvim
       lualine-nvim
       tokyonight-nvim
+      transparent-nvim
 
       (nvim-treesitter.withPlugins (p: [
         p.nix

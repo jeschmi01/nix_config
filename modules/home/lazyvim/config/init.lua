@@ -1,3 +1,6 @@
+require("transparent").setup({
+  extra_groups = { "NormalFloat", "NvimTreeNormal" }, -- Macht auch Floating Windows transparent
+})
 require("config.lazy")
 require("lspconfig").nixd.setup({
   cmd = { "nixd" },

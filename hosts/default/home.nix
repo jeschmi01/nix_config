@@ -9,6 +9,7 @@
 
   imports = [
     ../../modules/home/lazyvim/default.nix
+    ../../modules/home/kitty/default.nix
   ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -119,6 +120,7 @@
   qt = {
     enable = true;
     platformTheme.name = lib.mkForce "adwaita";
-    style.name = lib.mkForce "adwaita-dark"; # Damit QT-Apps auch dunkel sind wie dein Metal Gear Theme
   };
+
+  stylix.targets.kitty.enable = false;
 }

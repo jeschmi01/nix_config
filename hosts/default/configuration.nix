@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./../../modules/nixos/autoupdate.nix
+      ./../../modules/nixos/autoupdate/default.nix
       ./../../modules/nixos/stylix/default.nix
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
@@ -85,7 +85,6 @@
     isNormalUser = true;
     description = "Jennifer Schmidt";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
   };
 
   programs.zsh.enable = true;
@@ -105,6 +104,7 @@
     nixd
     wl-clipboard
     nixpkgs-fmt
+    kitty
   ];
 
   home-manager = {
