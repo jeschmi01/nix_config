@@ -9,7 +9,7 @@
     settings = {
       background = "#416448";
       background_blur = "5";
-      background_opacity = "0.7";
+      background_opacity = "0.8";
 
       hide_window_decorations = "yes";
 

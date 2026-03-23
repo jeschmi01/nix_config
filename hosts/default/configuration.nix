@@ -105,6 +105,8 @@
     wl-clipboard
     nixpkgs-fmt
     kitty
+    fortune
+    cowsay
   ];
 
   home-manager = {

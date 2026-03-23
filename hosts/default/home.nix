@@ -10,6 +10,7 @@
   imports = [
     ../../modules/home/lazyvim/default.nix
     ../../modules/home/kitty/default.nix
+    ../../modules/home/zsh/default.nix
   ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -77,6 +78,17 @@
   home.shellAliases = {
     update = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
     ll = "ls -l";
+    chuck =
+      let
+        chuckData = pkgs.runCommand "chuck-norris-data" { nativeBuildInputs = [ pkgs.fortune ]; } ''
+          mkdir -p $out
+          cp ${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/chucknorris/fortunes/chucknorris $out/
+          strfile $out/chucknorris $out/chucknorris.dat
+        '';
+      in
+      "${pkgs.fortune}/bin/fortune ${chuckData}/chucknorris";
+
+    chuck_cow = "chuck | ${pkgs.cowsay}/bin/cowsay";
   };
 
 
@@ -88,20 +100,6 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-      ];
-      theme = "robbyrussell";
-    };
   };
 
   programs.git = {
