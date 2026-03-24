@@ -10,7 +10,6 @@
       plugins = [
         "git"
       ];
-      theme = "robbyrussell";
     };
   };
 

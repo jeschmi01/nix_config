@@ -7,7 +7,7 @@
       "ctrl+shift+8" = "previous_window";
     };
     settings = {
-      background = "#416448";
+      background = "#15241C";
       background_blur = "5";
       background_opacity = "0.8";
 

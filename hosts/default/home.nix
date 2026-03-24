@@ -11,6 +11,7 @@
     ../../modules/home/lazyvim/default.nix
     ../../modules/home/kitty/default.nix
     ../../modules/home/zsh/default.nix
+    ../../modules/home/starship/default.nix
   ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -42,6 +43,7 @@
     # '')
     pkgs.nixd
     pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.meslo-lg
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -96,11 +98,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-  };
 
   programs.git = {
     enable = true;
