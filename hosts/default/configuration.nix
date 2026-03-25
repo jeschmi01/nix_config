@@ -6,7 +6,6 @@
       ./../../modules/nixos/autoupdate/default.nix
       ./../../modules/nixos/stylix/default.nix
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -108,13 +107,6 @@
     fortune
     cowsay
   ];
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "jenny" = import ./home.nix;
-    };
-  };
 
   system.stateVersion = "24.11";
 }
