@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 {
   stylix = {
     enable = true;
@@ -16,9 +16,9 @@
     };
     fonts = {
       sizes = {
-        terminal = 14; # Setzt Kitty, Alacritty, etc.
-        applications = 12; # Setzt GUI Apps (Browser Menüs, etc.)
-        desktop = 12; # Setzt die Panel/Bar Größe
+        terminal = 14;
+        applications = 12;
+        desktop = 12;
       };
     };
   };
