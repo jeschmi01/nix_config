@@ -1,0 +1,8 @@
+{ ... }:
+{
+  imports = [
+    ./autoupdate.nix
+
+    ./stylix
+  ];
+}

@@ -3,8 +3,7 @@
 {
   imports =
     [
-      ./../../modules/nixos/autoupdate/default.nix
-      ./../../modules/nixos/stylix/default.nix
+      ./../../modules/nixos
       ./hardware-configuration.nix
     ];
 

@@ -8,10 +8,7 @@
   home.homeDirectory = "/home/jenny";
 
   imports = [
-    ../../modules/home/lazyvim/default.nix
-    ../../modules/home/kitty/default.nix
-    ../../modules/home/zsh/default.nix
-    ../../modules/home/starship/default.nix
+    ../../modules/home
     niri.homeModules.niri
   ];
   # This value determines the Home Manager release that your configuration is
