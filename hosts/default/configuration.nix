@@ -110,6 +110,7 @@
     kitty
     fortune
     cowsay
+    fuzzel
   ];
 
   system.stateVersion = "24.11";

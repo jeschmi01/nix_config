@@ -1,5 +1,5 @@
 require("transparent").setup({
-  extra_groups = { "NormalFloat", "NvimTreeNormal" }, -- Macht auch Floating Windows transparent
+  extra_groups = { "NormalFloat", "NvimTreeNormal" },
 })
 require("config.lazy")
 require("lspconfig").nixd.setup({
@@ -10,16 +10,9 @@ require("lspconfig").nixd.setup({
         expr = "import <nixpkgs> { }",
       },
       formatting = {
-        command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
+        command = { "alejandra" },
       },
-      -- options = {
-      --   nixos = {
-      --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
-      --   },
-      --   home_manager = {
-      --       expr = '(builtins.getFlake "/PATH/TO/FLAKE").homeConfigurations.CONFIGNAME.options',
-      --   },
-      -- },
     },
   },
 })
+require("lspconfig").kdl_ls.setup({})
