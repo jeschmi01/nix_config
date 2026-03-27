@@ -45,21 +45,19 @@
   services.desktopManager.gnome.enable = true;
   services.displayManager.generic.environment = { };
 
+
   # Tastaturlayout auf Deutsch konfigurieren
   services.xserver.xkb = {
     layout = "de";
     variant = "";
   };
 
-  # Konsolen-Layout (für das Terminal außerhalb von GNOME)
   console.keyMap = "de";
 
-  # Wichtig für Laptops: Touchpad-Unterstützung
   services.libinput.enable = true;
 
   services.printing.enable = true;
 
-  # Audio (Pipewire)
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -77,7 +75,7 @@
       PermitRootLogin = "no";
     };
   };
-  # Benutzer-Account
+
   users.users.jenny = {
     shell = pkgs.zsh;
     isNormalUser = true;
@@ -86,6 +84,13 @@
   };
 
   programs.zsh.enable = true;
+  programs.niri.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    config.common.default = "*";
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+  };
 
   programs.firefox = {
     enable = true;

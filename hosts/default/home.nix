@@ -1,4 +1,4 @@
-{ config, pkgs, lib, niri, ... }:
+{ config, pkgs, lib, ... }:
 
 
 {
@@ -9,7 +9,6 @@
 
   imports = [
     ../../modules/home
-    niri.homeModules.niri
   ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
