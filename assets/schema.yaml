@@ -1,16 +1,16 @@
 system: "base16"
 name: "Metal Gear Rising Battle Custom"
 palette:
-  base00: "10161a" # Hintergrund
+  base00: "10161a" 
   base01: "151c22" 
-  base02: "3d3834" # <-- DEINE SCHRIFTFARBE (als dunkler Akzent)
+  base02: "3d3834"
   base03: "2f3b46"
   base04: "50616b"
-  base05: "a8bbc3" # Haupttext
+  base05: "a8bbc3" 
   base06: "cbdce1"
   base07: "e6f0f3"
-  base08: "df341a" # Rot
-  base09: "eaa641" # <-- DEIN ORANGE (als Primär-Akzent)
+  base08: "df341a"
+  base09: "eaa641" 
   base0A: "40d8ce"
   base0B: "a6b7bd"
   base0C: "58ecff"

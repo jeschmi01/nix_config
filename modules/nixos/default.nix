@@ -2,7 +2,6 @@
 {
   imports = [
     ./autoupdate.nix
-
-    ./stylix
+    ./stylix.nix
   ];
 }

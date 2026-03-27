@@ -2,8 +2,8 @@
 {
   stylix = {
     enable = true;
-    image = ./metalgear.jpg;
-    base16Scheme = ./schema.yaml;
+    image = ../../assets/metalgear.jpg;
+    base16Scheme = ../../assets/schema.yaml;
     imageScalingMode = "fill";
     polarity = "dark";
     targets.gnome.enable = true;
