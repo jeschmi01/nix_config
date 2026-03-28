@@ -4,7 +4,11 @@ input {
         layout "de";
     }
   }
+
+  focus-follows-mouse 
 }
+
+prefer-no-csd
 
 output "eDP-1" {
     mode "1920x1080@60"
@@ -12,10 +16,16 @@ output "eDP-1" {
     position x=0 y=0
 }
 
-output "HDMI-A-4" {
+output "Samsung Electric Company S24D300 0x5A5A4158" {
+  mode "1920x1080@60"
   scale 1.0
   background-color "#003300"
   position x=-1920 y=0
+}
+
+output "LG Electronics LG Ultra HD 0x00052A87" {
+  mode "2560x1440@59.951"
+  scale 1.0
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -29,11 +39,30 @@ binds {
     Mod+Shift+F { fullscreen-window; }
     Mod+R { switch-preset-column-width; }
 
-    Mod+Left { focus-column-left; }
-    Mod+Right { focus-column-right; }
+    Mod+Shift+H { show-hotkey-overlay; }
 
-    Mod+Alt+Left  { focus-monitor-left; }
-    Mod+Alt+Right { focus-monitor-right; }
+    Mod+Left { focus-column-or-monitor-left; }
+    Mod+Right { focus-column-or-monitor-right; }
+    Mod+Up    { focus-workspace-up; }
+    Mod+Down  { focus-workspace-down; }
+
+
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Plus { set-column-width "+10%"; }
+
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Plus  { set-window-height "+10%"; }
+
+
+    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Right  { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+Up    { move-column-to-workspace-up; }
+    Mod+Shift+Ctrl+Down { move-column-to-workspace-down; }
+
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -44,6 +73,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
+
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
@@ -54,11 +84,39 @@ binds {
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
+    Mod+Page_Up   { focus-monitor-up; }
+    Mod+Page_Down { focus-monitor-down; }
+
+    Mod+Shift+Page_Up   { move-column-to-monitor-up; }
+    Mod+Shift+Page_Down { move-column-to-monitor-down; }
+
+    Mod+Tab { focus-workspace-previous; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    
+    Mod+C { center-column; }
+
+
+    Print { spawn "grim" "$HOME/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"; }
+    Mod+S { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
+
     Mod+Shift+E { quit skip-confirmation=false; }
+    Mod+Shift+R { spawn "niri" "msg" "action" "reload-config"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 }
 
 layout {
-    tab-indicator {
-        on
-    }
+
+}
+
+debug {
+    render-drm-device "/dev/dri/renderD128"
 }
