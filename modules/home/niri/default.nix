@@ -5,7 +5,7 @@
     ./waybar.nix
   ];
 
-  xdg.configFile."niri/config.kdl" = {
+  home.file.".config/niri/config.kdl" = {
     force = true;
     text = ''
       ${builtins.readFile ./config.kdl}

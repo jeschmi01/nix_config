@@ -15,4 +15,3 @@ require("lspconfig").nixd.setup({
     },
   },
 })
-require("lspconfig").kdl_ls.setup({})

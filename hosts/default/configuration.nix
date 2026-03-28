@@ -95,7 +95,12 @@
   programs.firefox = {
     enable = true;
     languagePacks = [ "de" ];
+    preferences = {
+      "intl.accept_languages" = "de-de, de";
+      "intl.locale.requested" = "de";
+    };
   };
+
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 

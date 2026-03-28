@@ -8,8 +8,6 @@ input {
   focus-follows-mouse 
 }
 
-prefer-no-csd
-
 output "eDP-1" {
     mode "1920x1080@60"
     scale 1.0
@@ -19,7 +17,6 @@ output "eDP-1" {
 output "Samsung Electric Company S24D300 0x5A5A4158" {
   mode "1920x1080@60"
   scale 1.0
-  background-color "#003300"
   position x=-1920 y=0
 }
 
@@ -84,9 +81,6 @@ binds {
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
-    Mod+Page_Up   { focus-monitor-up; }
-    Mod+Page_Down { focus-monitor-down; }
-
     Mod+Shift+Page_Up   { move-column-to-monitor-up; }
     Mod+Shift+Page_Down { move-column-to-monitor-down; }
 
@@ -104,7 +98,7 @@ binds {
     Mod+Shift+E { quit skip-confirmation=false; }
     Mod+Shift+R { spawn "niri" "msg" "action" "reload-config"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SNK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
@@ -113,8 +107,23 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 }
 
-layout {
 
+layout {
+  focus-ring { 
+    width 3
+    active-color "#dfa742"
+  }
+
+  gaps 5
+}
+
+window-rule {
+    draw-border-with-background false
+}
+
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
 
 debug {

@@ -9,8 +9,8 @@
     settings = {
       background = "#15241C";
       background_blur = "5";
-      background_opacity = "0.8";
 
+      background_opacity = "0.8";
       hide_window_decorations = "yes";
 
       font_size = "14";
