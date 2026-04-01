@@ -56,6 +56,8 @@
 
   services.libinput.enable = true;
 
+  services.udev.packages = [ pkgs.brightnessctl ];
+
   services.printing.enable = true;
 
   services.pulseaudio.enable = false;
@@ -118,6 +120,7 @@
     swaybg
     grim
     slurp
+    brightnessctl
   ];
 
   hardware.nvidia.prime = {

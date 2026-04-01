@@ -17,6 +17,11 @@
     waybar
     swaybg
     xwayland
+    nodePackages.vscode-langservers-extracted
+    nodePackages.prettier
+    stylelint
+    tailwindcss-language-server
+    tree-sitter
   ];
 
 

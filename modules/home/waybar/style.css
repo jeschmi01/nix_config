@@ -1,0 +1,54 @@
+* {
+  font-family: "batmfa", "JetBrainsMono Nerd Font";
+}
+
+window#waybar {
+  background-color: rgba(43, 48, 59, 0.5);
+  border-bottom: 3px solid #dfa742;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#clock,
+#pulseaudio,
+#bluetooth,
+#network,
+#battery,
+#backlight {
+  padding: 0 10px;
+  background-color: #dfa742;
+  color: #121212;
+  margin: 4px 2px;
+  border-radius: 4px;
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#workspaces button {
+  transition: all 200ms ease-in-out;
+  padding: 0 2px;
+  background: rgba(18, 18, 18, 0.8);
+  border: 1px solid #434343;
+  background-color: transparent;
+  color: #e8eaed;
+}
+
+#workspaces button.active {
+  min-width: 50px;
+  background: #dfa742;
+  color: #121212;
+  border-radius: 10px;
+  border: 0px;
+}
+
+tooltip {
+  background: #2b303b;
+  border: 1px solid #dfa742;
+}
+
+tooltip label {
+  color: #ffffff;
+}

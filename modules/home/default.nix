@@ -7,5 +7,6 @@
 
     ./lazyvim
     ./niri
+    ./waybar
   ];
 }
