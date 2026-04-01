@@ -38,14 +38,17 @@ binds {
 
     Mod+Shift+H { show-hotkey-overlay; }
 
+    Mod+H { focus-column-or-monitor-left; }
+    Mod+L { focus-column-or-monitor-right; }
+ 
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }
     Mod+Up    { focus-workspace-up; }
     Mod+Down  { focus-workspace-down; }
 
 
-    Mod+Shift+Left  { move-column-left; }
-    Mod+Shift+Right { move-column-right; }
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Right { move-column-right; }
 
 
     Mod+Minus { set-column-width "-10%"; }
@@ -54,6 +57,9 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Plus  { set-window-height "+10%"; }
 
+
+    Mod+Shift+Left  { consume-or-expel-window-left; }
+    Mod+Shift+Right { consume-or-expel-window-right; }
 
     Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
     Mod+Shift+Ctrl+Right  { move-column-to-monitor-right; }
@@ -81,6 +87,10 @@ binds {
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
+
+    Mod+Ctrl+G { toggle-window-floating; }
+    Mod+Space { switch-focus-between-floating-and-tiling; }
+
     Mod+Shift+Page_Up   { move-column-to-monitor-up; }
     Mod+Shift+Page_Down { move-column-to-monitor-down; }
 
@@ -90,6 +100,7 @@ binds {
     Mod+End  { focus-column-last; }
     
     Mod+C { center-column; }
+    Mod+O { toggle-overview; }
 
 
     Print { spawn "grim" "$HOME/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"; }
