@@ -2,9 +2,11 @@
   font-family: "batmfa", "JetBrainsMono Nerd Font";
 }
 
+.modules-center > widget > *,
+.modules-left > widget > *,
 .modules-right > widget > * {
   padding: 1px 10px;
-  margin: 3px;
+  margin: 1px 5px;
   border-radius: 2px;
   color: #2c3e41;
   font-weight: bold;
@@ -27,10 +29,18 @@
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-#clock,
+#custom-weather {
+  color: #2c3e41;
+}
+
+#workspaces {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
 #workspaces button.active {
-  padding: 0 10px;
-  margin: 3px;
+  padding: 1 10px;
   border-radius: 2px;
   color: #121212;
   font-weight: bold;
@@ -58,15 +68,18 @@
 }
 
 #workspaces button {
+  margin: 0px 10px 0px 0px;
   transition: all 200ms ease-in-out;
   border-radius: 2px;
   background: transparent;
   color: #dfa742;
-  border-color: #dfa742;
+  border: 1px solid #dfa742;
 }
 
 #workspaces button.active {
   min-width: 50px;
+  font-weight: bold;
+  border: none;
 }
 
 tooltip {

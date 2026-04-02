@@ -3,6 +3,7 @@
 
   home.file.".local/share/fonts/batmfa.ttf".source = ./../../../assets/batmfa__.ttf;
   home.file.".local/share/fonts/batmfo.ttf".source = ./../../../assets/batmfo__.ttf;
+  home.file.".config/waybar/scripts/weather.py".source = ./weather.py;
 
   fonts.fontconfig.enable = true;
 
@@ -19,9 +20,21 @@
         exclusive = true;
         height = 35;
 
-        modules-left = [ "niri/workspaces" ];
-        modules-center = [ "clock" ];
+        modules-left = [ "niri/workspaces" "cpu" "memory" ];
+        modules-center = [ "clock" "custom/weather" ];
         modules-right = [ "tray" "bluetooth" "network" "backlight" "pulseaudio" "battery" ];
+
+
+        "cpu" = {
+          interval = 10;
+          format = " {}%";
+          max-length = 10;
+        };
+
+        "memory" = {
+          interval = 30;
+          format = "  {used:0.1f}G/{total:0.1f}G";
+        };
 
         "clock" = {
           format = "󰃭 {:%d.%m.%Y - %H:%M}";
@@ -45,6 +58,13 @@
             on-scroll-up = "shift_up";
             on-scroll-down = "shift_down";
           };
+        };
+
+        "custom/weather" = {
+          format = { };
+          return-type = "json";
+          interval = 3600;
+          exec = "python3 ~/.config/waybar/scripts/weather.py";
         };
 
         "backlight" = {
@@ -73,6 +93,7 @@
             tooltip-format = "{controller_alias}\t{controller_address}";
             tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
             tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+            on-click = "blueman-manager";
           };
 
 
@@ -87,12 +108,12 @@
 
         "network" = {
           format = "{ifname}";
-          format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} 󰊗";
+          format-wifi = "  {essid} ({signalStrength}%) ";
+          format-ethernet = "󰛳 {ipaddr}/{cidr} ";
           format-disconnected = "⚠ Disconnected";
-          tooltip-format = "{ifname} via {gwaddr} 󰊗";
-          tooltip-format-wifi = "{essid} ({signalStrength}%) ";
-          tooltip-format-ethernet = "{ifname} ";
+          tooltip-format = "{ifname} via {gwaddr} 󰛳";
+          tooltip-format-wifi = "  {essid} ({signalStrength}%) ";
+          tooltip-format-ethernet = "󰛳 {ifname}";
           tooltip-format-disconnected = "Disconnected";
           max-length = 50;
           on-click = "nm-connection-editor";

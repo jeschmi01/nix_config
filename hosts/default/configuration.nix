@@ -121,6 +121,9 @@
     grim
     slurp
     brightnessctl
+    blueman
+    wget
+    python314
   ];
 
   hardware.nvidia.prime = {
