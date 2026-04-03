@@ -9,6 +9,7 @@
       enable = true;
       plugins = [
         "git"
+        "emoji"
       ];
     };
   };

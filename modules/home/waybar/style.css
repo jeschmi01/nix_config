@@ -30,7 +30,7 @@
 }
 
 #custom-weather {
-  color: #2c3e41;
+  font-family: "JetBrainsMono Nerd Font";
 }
 
 #workspaces {
@@ -40,7 +40,7 @@
 }
 
 #workspaces button.active {
-  padding: 1 10px;
+  padding: 1px 10px;
   border-radius: 2px;
   color: #121212;
   font-weight: bold;
@@ -89,4 +89,5 @@ tooltip {
 
 tooltip label {
   color: #ffffff;
+  font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF", "monospace";
 }
