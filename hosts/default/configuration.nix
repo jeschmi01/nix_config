@@ -121,7 +121,6 @@
     grim
     slurp
     brightnessctl
-    blueman
     wget
     python314
   ];

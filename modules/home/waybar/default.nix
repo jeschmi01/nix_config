@@ -46,9 +46,9 @@
             on-scroll = 1;
             format = {
               months = "<span color='#ffead3'><b>{}</b></span>";
+              weekdays = "<span color='#dfa742'><b>{}</b></span>";
               days = "<span color='#ecc6d9'><b>{}</b></span>";
-              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+              weeks = "<span color='#99ffdd'><b>W{:%V}</b></span>";
               today = "<span color='#ff6699'><b><u>{}</u></b></span>";
             };
           };
@@ -93,7 +93,7 @@
             tooltip-format = "{controller_alias}\t{controller_address}";
             tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
             tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-            on-click = "blueman-manager";
+            on-click = "rofi-bluetooth";
           };
 
 

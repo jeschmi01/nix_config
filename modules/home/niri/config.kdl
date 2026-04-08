@@ -102,6 +102,7 @@ binds {
     Mod+C { center-column; }
     Mod+O { toggle-overview; }
 
+    Mod+B { spawn "rofi-bluetooth"; }
 
     Print { spawn "grim" "$HOME/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"; }
     Mod+S { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
