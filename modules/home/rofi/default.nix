@@ -1,36 +1,25 @@
 { pkgs, lib, config, ... }:
 
-let
-  icons = builtins.readFile ./icons.sh;
-  patched-rofi-bluetooth = pkgs.rofi-bluetooth.overrideAttrs (oldAttrs: {
-    postPatch = ''
-      export ICON_PATH=${./icons.sh}
-      bash ${./patch-rofi-bluetooth.sh}
-    '';
-  });
-in
 {
+  imports = [
+    ./rofi-bluetooth.nix
+  ];
+
+  home.packages = [
+    pkgs.libqalculate
+  ];
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi;
+    package = pkgs.rofi.override {
+      plugins = [ pkgs.rofi-calc ];
+    };
     theme = lib.mkForce ./theme.rasi;
+    modes = [
+      "drun"
+      "run"
+      "window"
+      "ssh"
+      "calc"
+    ];
   };
-
-  home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "rofi-bluetooth" ''
-      # Falls offen, dann schließen
-      if pgrep -x rofi > /dev/null; then
-        pkill -x rofi
-        exit 0
-      fi
-
-      # Startet das gepatchte Original mit deinem dunklen Prompt [#2c3e41]
-      ${patched-rofi-bluetooth}/bin/rofi-bluetooth \
-        -theme ${./theme.rasi} \
-        -p " Bluetooth"
-    '')
-
-    bluez
-    bc
-  ];
 }

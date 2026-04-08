@@ -22,7 +22,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Zeit- und Regionaleinstellungen für Deutschland
   time.timeZone = "Europe/Berlin";
 
   i18n.defaultLocale = "de_DE.UTF-8";

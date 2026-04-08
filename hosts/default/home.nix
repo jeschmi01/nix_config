@@ -21,7 +21,6 @@
     nodePackages.prettier
     stylelint
     tailwindcss-language-server
-    tree-sitter
   ];
 
 
