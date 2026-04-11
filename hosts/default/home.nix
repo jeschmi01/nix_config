@@ -30,7 +30,7 @@
   ];
 
   home.shellAliases = {
-    update = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
+    update = "sudo nixos-rebuild switch --flake .#nixos";
     ll = "ls -l";
     chuck =
       let
