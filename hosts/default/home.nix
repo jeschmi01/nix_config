@@ -21,8 +21,13 @@
     nodePackages.prettier
     stylelint
     tailwindcss-language-server
+    python314
+    rust-analyzer
+    rustc
+    cargo
+    rustfmt
+    gcc
   ];
-
 
   home.shellAliases = {
     update = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos";
@@ -64,4 +69,5 @@
   };
 
   stylix.targets.kitty.enable = false;
+  stylix.targets.dunst.enable = false;
 }

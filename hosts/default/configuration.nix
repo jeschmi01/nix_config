@@ -38,14 +38,12 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # X11 und Desktop (GNOME)
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
   services.displayManager.generic.environment = { };
 
 
-  # Tastaturlayout auf Deutsch konfigurieren
   services.xserver.xkb = {
     layout = "de";
     variant = "";
@@ -121,7 +119,7 @@
     slurp
     brightnessctl
     wget
-    python314
+    libnotify
   ];
 
   hardware.nvidia.prime = {

@@ -1,15 +1,16 @@
 { ... }:
 {
 
-  home.file.".local/share/fonts/batmfa.ttf".source = ./../../../assets/batmfa__.ttf;
-  home.file.".local/share/fonts/batmfo.ttf".source = ./../../../assets/batmfo__.ttf;
   home.file.".config/waybar/scripts/weather.py".source = ./weather.py;
 
   fonts.fontconfig.enable = true;
 
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      target = "niri.service";
+    };
 
     style = builtins.readFile ./style.css;
 

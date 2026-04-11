@@ -2,6 +2,7 @@
 
 let
   patched-rofi-bluetooth = pkgs.rofi-bluetooth.overrideAttrs (oldAttrs: {
+    nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.makeWrapper ];
     postPatch = ''
       export ICON_PATH=${./icons.sh}
       bash ${./patch-rofi-bluetooth.sh}
