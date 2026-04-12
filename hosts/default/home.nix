@@ -17,8 +17,7 @@
     waybar
     swaybg
     xwayland
-    nodePackages.vscode-langservers-extracted
-    nodePackages.prettier
+    prettier
     stylelint
     tailwindcss-language-server
     python314

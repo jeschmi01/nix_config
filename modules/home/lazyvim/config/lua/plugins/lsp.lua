@@ -20,6 +20,7 @@ return {
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
+              ---diagnostics = { enable = false },
               checkOnSave = {
                 command = "clippy",
               },
