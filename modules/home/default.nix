@@ -4,7 +4,7 @@
     ./zsh.nix
     ./kitty.nix
     ./starship.nix
-    ./swaylock.nix
+    ./hyprlock.nix
 
     ./lazyvim
     ./niri
