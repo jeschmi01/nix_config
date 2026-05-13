@@ -38,8 +38,10 @@ binds {
 
     Mod+Shift+H { show-hotkey-overlay; }
 
-    Mod+H { focus-monitor-left; }
-    Mod+L { focus-monitor-right; }
+    Mod+L { spawn "swaylock"; }
+
+    Mod+Ctrl+H { focus-monitor-left; }
+    Mod+Ctrl+L { focus-monitor-right; }
  
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }

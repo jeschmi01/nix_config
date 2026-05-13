@@ -67,6 +67,6 @@
     platformTheme.name = lib.mkForce "adwaita";
   };
 
-  stylix.targets.kitty.enable = false;
-  stylix.targets.dunst.enable = false;
+
+  programs.waybar.systemd.targets = [ "niri-session.target" ];
 }

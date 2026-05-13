@@ -2,6 +2,10 @@
   font-family: "JetBrainsMono Nerd Font";
 }
 
+window#waybar {
+  background-color: rgba(44, 62, 65, 0.8);
+}
+
 .modules-center > widget > *,
 .modules-left > widget > *,
 .modules-right > widget > * {
