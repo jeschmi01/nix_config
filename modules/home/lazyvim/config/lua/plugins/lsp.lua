@@ -20,12 +20,14 @@ return {
         rust_analyzer = {
           settings = {
             ["rust-analyzer"] = {
-              ---diagnostics = { enable = false },
               checkOnSave = {
                 command = "clippy",
               },
               procMacro = {
-                enable = true,
+                enable = false,
+              },
+              diagnostics = {
+                disabled = { "unresolved-proc-macro" },
               },
             },
           },

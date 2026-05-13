@@ -66,6 +66,7 @@
           return-type = "json";
           interval = 3600;
           exec = "python3 ~/.config/waybar/scripts/weather.py";
+          escape = true;
         };
 
         "backlight" = {

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
@@ -14,6 +14,7 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
 
   hardware.bluetooth = {
     enable = true;
@@ -37,6 +38,13 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
+
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+    ];
+  };
+
 
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
