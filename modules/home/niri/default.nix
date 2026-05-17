@@ -2,10 +2,13 @@
 
 {
   home.file.".config/niri/config.kdl" = {
+    source = ./config.kdl;
     force = true;
-    text = ''
-      ${builtins.readFile ./config.kdl}
-      spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-i" "${../../../assets/metalgear.jpg}" "-m" "fill"
+  };
+
+  home.activation = {
+    restoreWallpaper = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+      ${pkgs.waypaper}/bin/waypaper --restore &
     '';
   };
 }

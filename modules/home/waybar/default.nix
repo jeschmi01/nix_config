@@ -21,7 +21,7 @@
         exclusive = true;
         height = 35;
 
-        modules-left = [ "niri/workspaces" "cpu" "memory" ];
+        modules-left = [ "niri/workspaces" "cpu" "memory" "temperature" ];
         modules-center = [ "clock" "custom/weather" ];
         modules-right = [ "tray" "bluetooth" "network" "backlight" "pulseaudio" "battery" ];
 
@@ -35,6 +35,13 @@
         "memory" = {
           interval = 30;
           format = "  {used:0.1f}G/{total:0.1f}G";
+        };
+
+        "temperature" = {
+          thermal-zone = 2;
+          critical-threshold = 80;
+          format-critical = "{temperatureC }°C ";
+          format = "{temperatureC}°C ";
         };
 
         "clock" = {

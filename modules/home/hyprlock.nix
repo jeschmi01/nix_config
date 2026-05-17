@@ -13,7 +13,7 @@
 
       background = [
         {
-          path = "${../../assets/metalgear.jpg}";
+          path = "~/.config/backgrounds/metalgear.jpg";
           blur_passes = 3;
           blur_size = 12;
           brightness = 0.5;

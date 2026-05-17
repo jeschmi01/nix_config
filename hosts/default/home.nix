@@ -28,6 +28,11 @@
     gcc
   ];
 
+  home.file.".config/backgrounds" = {
+    source = ./../../backgrounds;
+    recursive = true;
+  };
+
   home.shellAliases = {
     update = "sudo nixos-rebuild switch --flake .#nixos";
     ll = "ls -l";
