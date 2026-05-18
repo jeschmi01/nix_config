@@ -123,12 +123,12 @@
     kitty
     fortune
     cowsay
-    swaybg
     grim
     slurp
     brightnessctl
     wget
     libnotify
+    inputs.awww.packages.${pkgs.system}.awww
   ];
 
   hardware.nvidia.prime = {

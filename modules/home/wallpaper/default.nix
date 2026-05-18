@@ -10,7 +10,7 @@
       ''[Settings]
         language = de
         folder = ${config.home.homeDirectory}/.config/backgrounds/
-        backend = swaybg       
+        backend = awww       
         monitors = All
         fill = Fill
         sort = name
@@ -22,6 +22,12 @@
         post_command =
         zen_mode = True
         keybindings = ${config.home.homeDirectory}/.config/waypaper/keybindings.ini
+
+        swww_transition_type = center
+        swww_transition_step = 90
+        swww_transition_angle = 0
+        swww_transition_duration = 2
+        swww_transition_fps = 60
       '';
     force = true;
   };

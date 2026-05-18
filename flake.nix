@@ -8,6 +8,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    awww.url = "git+https://codeberg.org/LGFae/awww";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
