@@ -40,7 +40,8 @@ binds {
 
     Mod+Shift+H { show-hotkey-overlay; }
 
-    Mod+L { spawn "hyprlock" "--config" "/home/jenny/.config/hypr/hyprlock.conf"; }
+    Mod+L { spawn "dynamic-lock"; }
+    Mod+W { spawn "waypaper"; }
 
     Mod+Ctrl+H { focus-monitor-left; }
     Mod+Ctrl+L { focus-monitor-right; }

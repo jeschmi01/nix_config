@@ -10,6 +10,6 @@
     ./niri
     ./rofi
     ./waybar
-    ./wallpaper
+    ./waypaper
   ];
 }
