@@ -47,17 +47,6 @@
   };
 
 
-  services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.generic.environment = { };
-
-
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
-
   console.keyMap = "de";
 
   services.libinput.enable = true;
@@ -94,11 +83,6 @@
   programs.zsh.enable = true;
   programs.niri.enable = true;
 
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-  };
 
   programs.firefox = {
     enable = true;
