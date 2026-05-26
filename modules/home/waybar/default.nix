@@ -1,9 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
 {
 
   home.file.".config/waybar/scripts/weather.py".source = ./weather.py;
 
   fonts.fontconfig.enable = true;
+
+
+  home.packages = with pkgs; [
+    waybar
+  ];
 
   programs.waybar = {
     enable = true;

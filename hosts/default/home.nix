@@ -13,9 +13,6 @@
     nixd
     nerd-fonts.jetbrains-mono
     nerd-fonts.meslo-lg
-    fuzzel
-    waybar
-    swaybg
     xwayland
     prettier
     stylelint

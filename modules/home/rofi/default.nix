@@ -1,8 +1,6 @@
 { pkgs, lib, config, ... }:
 
 let
-  lockScript = pkgs.callPackage ../hyprlock/dynamic-lock.nix { inherit config; };
-
   rofi-power-menu-custom = pkgs.writeShellScriptBin "rofi-power-menu" ''
     if [ -z "$1" ]; then
         echo -e "󰌾 Lock screen\n󰒲 Suspend\n󰍃 Log out\n󰜉 Reboot\n󰐥 Shut down"
@@ -14,12 +12,10 @@ let
             dynamic-lock > /dev/null 2>&1
             ;;
         *"Suspend")
-            dynamic-lock > /dev/null 2>&1
-            sleep 0.5
             systemctl suspend
-            ;;
+           ;;
         *"Log out")
-            niri msg action quit skip-confirmation=true
+            niri msg action quit
             ;;
         *"Reboot")
             systemctl reboot
@@ -38,7 +34,6 @@ in
   home.packages = [
     pkgs.libqalculate
     pkgs.hyprlock
-    lockScript
     rofi-power-menu-custom
   ];
 

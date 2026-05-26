@@ -1,19 +1,18 @@
-{ ... }:
-
+{ pkgs, config, ... }:
 {
   services.hypridle = {
     enable = true;
     settings = {
       general = {
-        lock_cmd = "pidof hyprlock || hyprlock";
-        before_sleep_cmd = "loginctl lock-session";
+        lock_cmd = "dynamic-lock";
+        before_sleep_cmd = "dynamic-lock";
         after_sleep_cmd = "niri msg action power-on-monitors";
       };
 
       listener = [
         {
           timeout = 300;
-          on-timeout = "loginctl lock-session";
+          on-timeout = "dynamic-lock";
         }
         {
           timeout = 600;
