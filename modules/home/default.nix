@@ -4,8 +4,8 @@
     ./zsh.nix
     ./kitty.nix
     ./starship.nix
-    ./hyprlock.nix
 
+    ./hyprlock
     ./lazyvim
     ./niri
     ./rofi

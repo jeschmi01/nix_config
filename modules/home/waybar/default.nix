@@ -118,7 +118,7 @@
         "network" = {
           format = "{ifname}";
           format-wifi = "  {essid} ({signalStrength}%) ";
-          format-ethernet = "󰛳 {ipaddr}/{cidr} ";
+          format-ethernet = "󰛳 Wired";
           format-disconnected = "⚠ Disconnected";
           tooltip-format = "{ifname} via {gwaddr} 󰛳";
           tooltip-format-wifi = "  {essid} ({signalStrength}%) ";

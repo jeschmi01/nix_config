@@ -38,13 +38,13 @@ binds {
     Mod+Shift+F { fullscreen-window; }
     Mod+R { switch-preset-column-width; }
 
-    Mod+Shift+H { show-hotkey-overlay; }
+    Mod+Ctrl+Shift+H { show-hotkey-overlay; }
 
-    Mod+L { spawn "dynamic-lock"; }
-    Mod+W { spawn "waypaper"; }
+    Mod+Alt+L { spawn "dynamic-lock"; }
+    Mod+Alt+W { spawn "waypaper"; }
 
-    Mod+Ctrl+H { focus-monitor-left; }
-    Mod+Ctrl+L { focus-monitor-right; }
+    Mod+Shift+H { focus-monitor-left; }
+    Mod+Shift+L { focus-monitor-right; }
  
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }
@@ -107,16 +107,15 @@ binds {
     Mod+C { center-column; }
     Mod+O { toggle-overview; }
 
-    Mod+B { spawn "rofi-bluetooth"; }
-
-    Print { spawn "grim" "$HOME/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"; }
+        Print { spawn "grim" "$HOME/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png"; }
     Mod+S { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
 
-    Mod+Shift+E { quit skip-confirmation=false; }
 
     Mod+Shift+R { spawn "niri" "msg" "action" "reload-config"; }
 
-    Mod+Shift+C { spawn-sh "rofi -show calc -modi calc -no-show-match -no-persist-history -calc-command \"echo -n '{result}' | wl-copy\""; }
+    Mod+Alt+B { spawn "rofi-bluetooth"; }
+    Mod+Alt+E { spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu"; }
+    Mod+Alt+C { spawn-sh "rofi -show calc -modi calc -no-show-match -no-persist-history -calc-command \"echo -n '{result}' | wl-copy\""; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
