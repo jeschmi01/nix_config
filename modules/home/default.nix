@@ -6,6 +6,7 @@
     ./starship.nix
     ./hypridle.nix
 
+    ./fastfetch
     ./fuzzel
     ./hyprlock
     ./lazyvim

@@ -43,8 +43,8 @@ binds {
     Mod+L { spawn "dynamic-lock"; }
     Mod+W { spawn "waypaper"; }
 
-    Mod+Shift+H { focus-monitor-left; }
-    Mod+Shift+L { focus-monitor-right; }
+    Mod+Ctrl+H { focus-monitor-left; }
+    Mod+Ctrl+L { focus-monitor-right; }
  
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }

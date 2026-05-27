@@ -39,13 +39,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  i18n.inputMethod = {
-    enable = true;
-    type = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [
-    ];
-  };
-
 
   console.keyMap = "de";
 
@@ -100,7 +93,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    fastfetch
     nixd
     wl-clipboard
     nixpkgs-fmt

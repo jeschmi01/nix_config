@@ -1,0 +1,66 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty",
+    "source": "~/.config/fastfetch/sam.webp",
+    "width": 28,
+    "height": 12,
+    "padding": { "top": 2, "right": 4 },
+  },
+  "display": {
+    "size": { "maxPrefix": "GB", "ndigits": 1, "spaceBeforeUnit": "never" },
+    "freq": { "ndigits": 3, "spaceBeforeUnit": "never" },
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "\u001b[1;33m╭────────────────────────────╮\u001b[0m",
+    },
+    {
+      "type": "title",
+      "key": "  \u001b[36m user\u001b[0m",
+      "format": "{user-name}",
+    },
+    {
+      "type": "title",
+      "key": "  \u001b[36m󰇅 host\u001b[0m",
+      "format": "{host-name}",
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[1;33m╰────────────────────────────╯\u001b[0m",
+    },
+    "break",
+    { "type": "custom", "format": "\u001b[1;33m󰨨 SYSTEM\u001b[0m" },
+    {
+      "type": "custom",
+      "format": "\u001b[33m──────────────────────────────\u001b[0m",
+    },
+    { "type": "os", "key": "  󱄅 OS", "format": "{name}" },
+    { "type": "kernel", "key": "  󰿟 Kernel", "format": "{release}" },
+    { "type": "uptime", "key": "  󰅐 Uptime" },
+    "break",
+    { "type": "custom", "format": "\u001b[1;33m󰇄 ENVIRONMENT\u001b[0m" },
+    {
+      "type": "custom",
+      "format": "\u001b[33m──────────────────────────────\u001b[0m",
+    },
+    { "type": "shell", "key": "   Shell" },
+    { "type": "terminal", "key": "   Terminal" },
+    { "type": "de", "key": "  󰇄 DE" },
+    { "type": "wm", "key": "   WM" },
+    "break",
+    { "type": "custom", "format": "\u001b[1;33m󰍛 HARDWARE\u001b[0m" },
+    {
+      "type": "custom",
+      "format": "\u001b[33m──────────────────────────────\u001b[0m",
+    },
+    { "type": "cpu", "key": "  󰍛 CPU" },
+    { "type": "gpu", "key": "  󰢮 GPU", "format": "{name}" },
+    {
+      "type": "memory",
+      "key": "  󰑭 RAM",
+      "format": "{used} / {total} ({percentage})",
+    },
+  ],
+}
