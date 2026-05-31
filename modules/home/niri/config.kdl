@@ -43,6 +43,7 @@ binds {
     Mod+L { spawn "dynamic-lock"; }
     Mod+W { spawn "waypaper"; }
 
+
     Mod+Ctrl+H { focus-monitor-left; }
     Mod+Ctrl+L { focus-monitor-right; }
  
@@ -113,9 +114,11 @@ binds {
 
     Mod+Shift+R { spawn "niri" "msg" "action" "reload-config"; }
 
-    Mod+B { spawn "rofi-bluetooth"; }
-    Mod+E { spawn "rofi" "-show" "power-menu" "-modi" "power-menu:rofi-power-menu"; }
-    Mod+C { spawn-sh "rofi -show calc -modi calc -no-show-match -no-persist-history -calc-command \"echo -n '{result}' | wl-copy\""; }
+    Mod+Alt+B { spawn "rofi-bluetooth"; }
+    Mod+Alt+P { spawn-sh "rofi -show power-menu -modi power-menu:rofi-power-menu"; }
+    Mod+Alt+C { spawn-sh "rofi -show calc -modi calc -no-show-match -no-persist-history -calc-command \"echo -n '{result}' | wl-copy\""; }
+    Mod+Alt+S { spawn-sh "pwmenu -l fuzzel"; }
+    Mod+Alt+N { spawn-sh "env LANG=C rofi-network-manager"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }

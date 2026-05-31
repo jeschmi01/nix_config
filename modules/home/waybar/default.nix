@@ -117,7 +117,7 @@
           format-icons = {
             default = [ "" "" "" ];
           };
-          on-click = "pavucontrol";
+          on-click = "pwmenu -l fuzzel";
         };
 
         "network" = {

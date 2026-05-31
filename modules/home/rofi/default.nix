@@ -32,6 +32,8 @@ in
   ];
 
   home.packages = [
+    pkgs.pwmenu
+    pkgs.rofi-network-manager
     pkgs.libqalculate
     pkgs.hyprlock
     rofi-power-menu-custom

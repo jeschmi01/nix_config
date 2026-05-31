@@ -5,6 +5,7 @@
     ./kitty.nix
     ./starship.nix
     ./hypridle.nix
+    ./application.nix
 
     ./fastfetch
     ./fuzzel
