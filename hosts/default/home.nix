@@ -17,7 +17,6 @@
     prettier
     stylelint
     tailwindcss-language-server
-    python314
     rust-analyzer
     rustc
     cargo
