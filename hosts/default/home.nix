@@ -23,7 +23,7 @@
     cargo
     rustfmt
     gcc
-    telegram-desktop
+    jq
   ];
 
   home.file.".config/backgrounds" = {

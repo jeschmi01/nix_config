@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
 
-  home.file.".config/waybar/scripts/weather.py".source = ./weather.py;
+  home.file.".config/waybar/scripts/weather.sh".source = ./weather.sh;
 
   fonts.fontconfig.enable = true;
 
@@ -24,7 +24,7 @@
         layer = "top";
         position = "top";
         exclusive = true;
-        height = 35;
+        height = 38;
 
         modules-left = [ "niri/workspaces" "cpu" "memory" "temperature" ];
         modules-center = [ "clock" "custom/weather" ];
@@ -72,13 +72,12 @@
             on-scroll-down = "shift_down";
           };
         };
-
         "custom/weather" = {
-          format = { };
+          format = "{}";
           return-type = "json";
-          interval = 3600;
-          exec = "python3 ~/.config/waybar/scripts/weather.py";
-          escape = true;
+          interval = 60;
+          exec = "~/.config/waybar/scripts/weather.sh";
+          escape = false;
         };
 
         "backlight" = {
