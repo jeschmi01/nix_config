@@ -23,15 +23,16 @@
     rustfmt
     gcc
     jq
+    libnotify
+
+    (writeShellScriptBin "update" ''
+      cd "$HOME/Projekte/nix_config"
+      git add .
+      sudo nixos-rebuild switch --flake .#nixos
+    '')
   ];
 
-  home.file.".config/backgrounds" = {
-    source = ./../../backgrounds;
-    recursive = true;
-  };
-
   home.shellAliases = {
-    update = "sudo nixos-rebuild switch --flake .#nixos";
     ll = "ls -l";
     chuck =
       let

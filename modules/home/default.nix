@@ -5,10 +5,11 @@
     ./kitty.nix
     ./starship.nix
     ./hypridle.nix
-    ./application.nix
 
+    ./applications
     ./fastfetch
     ./fuzzel
+    ./gtk
     ./hyprlock
     ./lazyvim
     ./niri

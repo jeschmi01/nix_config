@@ -95,6 +95,7 @@
           format-plugged = " {capacity}%";
           format-alt = "{icon} {time}";
           format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          on-update = "if [ $(cat /sys/class/power_supply/BAT0/capacity) -le 15 ] && [ $(cat /sys/class/power_supply/BAT0/status) = 'Discharging' ]; then notify-send -u critical 'Battery Low!' 'Please connect your charger.'; fi";
         };
 
 

@@ -5,6 +5,11 @@
     waypaper
   ];
 
+  home.file.".config/backgrounds" = {
+    source = ./../../../backgrounds;
+    recursive = true;
+  };
+
   xdg.configFile."waypaper/config.ini" = {
     text =
       ''[Settings]
@@ -32,6 +37,4 @@
     force = true;
   };
 
-  xdg.configFile."waypaper/keybindings.ini".source = ./keybindings.ini;
-  xdg.configFile."gtk-3.0/gtk.css".source = ./style.css;
 }

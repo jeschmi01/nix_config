@@ -46,19 +46,13 @@ binds {
 
     Mod+Ctrl+Shift+H { show-hotkey-overlay; }
 
-    Mod+L { spawn "dynamic-lock"; }
-    Mod+W { spawn "waypaper"; }
-
-
-    Mod+Ctrl+H { focus-monitor-left; }
-    Mod+Ctrl+L { focus-monitor-right; }
- 
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }
     Mod+Up    { focus-workspace-up; }
     Mod+Down  { focus-workspace-down; }
 
-
+    Mod+H { focus-monitor-left; }
+    Mod+L { focus-monitor-right; }
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Right { move-column-right; }
 
@@ -126,6 +120,9 @@ binds {
     Mod+Alt+S { spawn-sh "pwmenu -l fuzzel"; }
     Mod+Alt+D { spawn-sh "rofi-display-picker"; }
     Mod+Alt+N { spawn-sh "env LANG=C rofi-network-manager"; }
+    Mod+Alt+L { spawn "dynamic-lock"; }
+    Mod+Alt+W { spawn "waypaper"; }
+
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }

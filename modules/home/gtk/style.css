@@ -11,14 +11,18 @@ window windowtitle label {
 
 window {
   background-color: rgba(44, 62, 65, 0.8);
+  padding: 0px !important;
+}
+
+window menu,
+window menubar {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
 }
 
 headerbar,
 .titlebar,
 window .titlebar {
-  padding: 4px 10px;
-  margin: 4px 5px;
-  border-radius: 2px;
   font-weight: bold;
   background-color: #cfe5e8;
 
@@ -37,12 +41,30 @@ window .titlebar {
 
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   border: none !important;
+
+  min-height: 24px !important;
+  margin: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+window windowtitle label {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 headerbar button.close {
   background: transparent;
   border: none;
   box-shadow: none;
+}
+
+headerbar button,
+window .titlebar button {
+  padding: 2px 6px !important;
+  min-height: 16px !important;
 }
 
 flowbox {
