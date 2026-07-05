@@ -7,5 +7,8 @@
     nautilus
     sioyek
     zotero
+
+    ghc
+    hlint
   ];
 }
