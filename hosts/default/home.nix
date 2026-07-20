@@ -18,13 +18,13 @@
     stylelint
     tailwindcss-language-server
     rust-analyzer
-    rustc
-    cargo
     rustfmt
     gcc
     jq
     libnotify
-
+    (python3.withPackages (ps: with ps; [
+      pynvim
+    ]))
     (writeShellScriptBin "update" ''
       cd "$HOME/Projekte/nix_config"
       git add .

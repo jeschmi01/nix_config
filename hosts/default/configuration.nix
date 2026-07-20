@@ -14,7 +14,6 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
 
   hardware.bluetooth = {
     enable = true;

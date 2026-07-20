@@ -10,5 +10,9 @@
 
     ghc
     hlint
+    coq
+    coqPackages.coq-lsp
+
+    protonvpn-gui
   ];
 }

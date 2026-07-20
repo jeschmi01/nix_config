@@ -1,8 +1,8 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
+    opts = function(_, opts)
+      opts.servers = vim.tbl_deep_extend("force", opts.servers or {}, {
         nixd = {
           settings = {
             nixd = {
@@ -32,7 +32,14 @@ return {
             },
           },
         },
-      },
-    },
+      })
+    end,
+  },
+  {
+    "whonore/Coqtail",
+    ft = { "coq" },
+    init = function()
+      vim.g.coqtail_auto_start = 1
+    end,
   },
 }
