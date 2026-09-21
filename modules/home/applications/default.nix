@@ -10,7 +10,9 @@
 
     ghc
     hlint
-    coq
+    (coq.withPackages (p: [
+      p.stdlib
+    ]))
     coqPackages.coq-lsp
 
     protonvpn-gui
